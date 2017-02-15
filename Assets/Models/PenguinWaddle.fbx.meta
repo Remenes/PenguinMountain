@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 525844e88fc86484f9180d24c2dbb6c3
+timeCreated: 1487031620
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Beak
+    100004: Bone
+    100006: Bone.001
+    100008: Bone.001_end
+    100010: Bone_end
+    100012: BottomHalf
+    100014: LeftEye
+    100016: LeftEyeWhite
+    100018: LowerLeftArm
+    100020: LowerLeftArm.001
+    100022: LowerLeftArm.001_end
+    100024: LowerLeftArm_end
+    100026: LowerRightArm
+    100028: LowerRightArm.001
+    100030: LowerRightArm.001_end
+    100032: LowerRightArm_end
+    100034: Penguin
+    100036: //RootNode
+    100038: RightEye
+    100040: RightEyeWhite
+    100042: RightLeg
+    100044: RightLeg_end
+    100046: TopHalf
+    100048: TopHalf_end
+    100050: UpperLeftArm
+    100052: UpperRgihtArm
+    400000: Armature
+    400002: Beak
+    400004: Bone
+    400006: Bone.001
+    400008: Bone.001_end
+    400010: Bone_end
+    400012: BottomHalf
+    400014: LeftEye
+    400016: LeftEyeWhite
+    400018: LowerLeftArm
+    400020: LowerLeftArm.001
+    400022: LowerLeftArm.001_end
+    400024: LowerLeftArm_end
+    400026: LowerRightArm
+    400028: LowerRightArm.001
+    400030: LowerRightArm.001_end
+    400032: LowerRightArm_end
+    400034: Penguin
+    400036: //RootNode
+    400038: RightEye
+    400040: RightEyeWhite
+    400042: RightLeg
+    400044: RightLeg_end
+    400046: TopHalf
+    400048: TopHalf_end
+    400050: UpperLeftArm
+    400052: UpperRgihtArm
+    2300000: Beak
+    2300002: LeftEye
+    2300004: LeftEyeWhite
+    2300006: RightEye
+    2300008: RightEyeWhite
+    3300000: Beak
+    3300002: LeftEye
+    3300004: LeftEyeWhite
+    3300006: RightEye
+    3300008: RightEyeWhite
+    4300000: Penguin
+    4300002: RightEyeWhite
+    4300004: Beak
+    4300006: LeftEye
+    4300008: RightEye
+    4300010: LeftEyeWhite
+    7400000: Armature|ArmatureAction
+    7400002: Armature|Movement
+    7400004: Armature|Idle
+    7400006: Armature|Waddling
+    9500000: //RootNode
+    13700000: Penguin
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
