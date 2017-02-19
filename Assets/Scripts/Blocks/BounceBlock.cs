@@ -38,8 +38,11 @@ public class BounceBlock : ActionBlock {
         newVel += ((transform.rotation * Vector3.up) * bounceSpeed);
         
         playerRB.velocity = newVel;
-        
-        StartCoroutine(player.GetComponent<PlayerScript>().PauseMovementAxis(pausePlayerTime));
+
+        PlayerScript playerScript = player.GetComponent<PlayerScript>();
+
+        if (playerScript)
+            StartCoroutine(playerScript.PauseMovementAxis(pausePlayerTime));
     }
 
     private void playParticleEffects() {

@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFloorTrigger : MonoBehaviour {
+public class PenguinFloorTrigger : MonoBehaviour {
 
-    private PlayerScript playerScript;
+    private AnimControl penguinScript;
 
 	// Use this for initialization
 	void Start () {
-        playerScript = transform.parent.GetComponent<PlayerScript>();
+        penguinScript = transform.parent.GetComponent<AnimControl>();
 	}
 	
     void OnTriggerStay(Collider collided) {
-        playerScript.canJump = true;
+        penguinScript.canJump = true;
     }
 
     void OnTriggerExit(Collider collided) {
-        playerScript.canJump = false;
+        penguinScript.canJump = false;
     }
 }

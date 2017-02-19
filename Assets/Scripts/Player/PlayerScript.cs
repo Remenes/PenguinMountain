@@ -10,28 +10,28 @@ public class PlayerScript : MonoBehaviour {
 
     private bool canMoveHori = true;
     private bool canMoveVert = true;
-    public bool canJump = true;
-    private bool justJumped = false;
-    public bool inAir = false;
+    //public bool canJump = true;
+    //private bool justJumped = false;
+    //public bool inAir = false;
 
     private float hori;
     private float vert;
 
     private Rigidbody playerRB;
-    public float speed = 5f;
-    public float jumpSpeed = 5f;
+    public float speed = 7f;
+    public float jumpSpeed = 10.5f;
 
     private Camera cam;
 
     private Vector3 savedMoveVector;
-    private Animator playerAnim;
+    private AnimControl anim;
 
 	// Use this for initialization
 	void Start () {
         playerRB = GetComponent<Rigidbody>();
         cam = Camera.main;
         savedMoveVector = Vector3.zero;
-        playerAnim = GetComponent<Animator>();
+        anim = GetComponent<AnimControl>();
 	}
 
 	// Update is called once per frame
@@ -56,6 +56,9 @@ public class PlayerScript : MonoBehaviour {
             vert = 0;
         }
 
+        anim.hori = hori;
+        anim.vert = vert;
+
         Vector3 direction = (camRotation * new Vector3(hori, 0, vert));
         direction.y = 0;
 
@@ -67,15 +70,10 @@ public class PlayerScript : MonoBehaviour {
         Vector3 newVector = (direction * speed * Time.deltaTime);
 
         jumpPlayer();
-
-        playAnim();
-
-        if (!justJumped) {
-            if (!inAir)
+        
+        if (!anim.justJumped) {
+            if (!anim.inAir)
                 rotatePlayer(camRotation);
-            else {
-                transform.Rotate(new Vector3(randRotationInt(), randRotationInt(), randRotationInt()) * Time.deltaTime);
-            }
 
             savedMoveVector = newVector;
             playerRB.MovePosition(transform.position + newVector);
@@ -83,7 +81,6 @@ public class PlayerScript : MonoBehaviour {
             
         }
         else {
-            transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime);
             playerRB.MovePosition(transform.position + savedMoveVector);
         }
 
@@ -98,11 +95,11 @@ public class PlayerScript : MonoBehaviour {
 
     public void jumpPlayer() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (canJump) {
-                //canJump = false;
+            if (anim.canJump) {
+                anim.canJump = false;
                 playerRB.velocity = new Vector3(0, jumpSpeed, 0);
-                print(playerRB.velocity);
-                justJumped = true;
+                
+                anim.justJumped = true;
                 StartCoroutine(PauseMovementAxis(1f));
                 
             }
@@ -110,11 +107,10 @@ public class PlayerScript : MonoBehaviour {
     }
 
     private void rotatePlayer(Quaternion camRotation) {
-        camRotation.x = 0;
-        camRotation.z = 0;
 
         if (isMoving()) {
-            transform.rotation = Quaternion.Slerp(transform.rotation, camRotation, .16f);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, camRotation, .16f);
+            anim.rotatePenguin(camRotation);
         }
     }
     
@@ -139,27 +135,8 @@ public class PlayerScript : MonoBehaviour {
         canMoveHori = true;
         canMoveVert = true;
 
-        justJumped = false;
+        anim.justJumped = false;
     }
     
-    private void playAnim() {
-        float value = Mathf.Sqrt(hori * hori + vert * vert);
-        if (inAir) {
-            value = 1;
-        }
-        if (justJumped) {
-            value = 0;
-        }
-        playerAnim.SetFloat("MoveSpeed", value);
-    }
-
-    //Collision Events
-
-    void OnCollisionStay(Collision collided) {
-        inAir = false;
-    }
-
-    void OnCollisionExit(Collision collided) {
-        inAir = true;
-    }
+    
 }

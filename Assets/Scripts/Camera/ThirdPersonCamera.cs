@@ -9,9 +9,9 @@ public class ThirdPersonCamera : MonoBehaviour {
     private const float MAX_Y_ANGLE_MOVING = 15;
     private const float MIN_Y_ANGLE_MOVING = -10;
 
-    private const float MAX_DISTANCE = 8f;
+    private const float MAX_DISTANCE = 12f;
     private const float MIN_DISTANCE = 3f;
-    private float currentDistance = MAX_DISTANCE;
+    private float currentDistance = 7f;
 
     public GameObject player;
     private PlayerScript playerScript;
