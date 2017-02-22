@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour {
 
-    private const float MAX_Y_ANGLE_IDLE = 50;
+    private const float MAX_Y_ANGLE_IDLE = 70;
     private const float MIN_Y_ANGLE_IDLE = -20;
     private const float MAX_Y_ANGLE_MOVING = 15;
     private const float MIN_Y_ANGLE_MOVING = -10;
@@ -104,7 +104,7 @@ public class ThirdPersonCamera : MonoBehaviour {
         //}
 
         //cam.transform.position = Vector3.Slerp(updatedPosition, newCamPos, moveTimer / camMoveTime);
-        cam.transform.position = Vector3.Slerp(cam.transform.position, newCamPos, .06f);
+        cam.transform.position = Vector3.Slerp(cam.transform.position, newCamPos, .12f);
         //cam.transform.position = newCamPos;
         
 
