@@ -41,8 +41,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
     private void movePlayer() {
-        hori = Input.GetAxis("Horizontal");
-        vert = Input.GetAxis("Vertical");
+        hori = Input.GetAxisRaw("Horizontal");
+        vert = Input.GetAxisRaw("Vertical");
         
         Quaternion camRotation = cam.transform.rotation;
 
@@ -60,14 +60,22 @@ public class PlayerScript : MonoBehaviour {
         anim.vert = vert;
 
         Vector3 direction = (camRotation * new Vector3(hori, 0, vert));
+        print("Check" + direction);
+        //direction.x = direction.x > 0 ? 1 : 0;
+        //direction.z = direction.z > 0 ? 1 : 0;
         direction.y = 0;
-
+        direction = direction.normalized;
+        print("Normalized" + direction);
         //if (justJumped) {
         //    justJumped = false;
         //    playerRB.velocity = direction * speed;
         //}
+        Vector3 speedVector = direction * speed;
+
+        //if (isMoving())
+        //    speedVector = speedVector * speed / (Mathf.Sqrt(speedVector.x * speedVector.x + speedVector.z * speedVector.z));
         
-        Vector3 newVector = (direction * speed * Time.deltaTime);
+        Vector3 newVector = (speedVector * Time.deltaTime);
 
         jumpPlayer();
         

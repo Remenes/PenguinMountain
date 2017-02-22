@@ -19,7 +19,7 @@ public class ThirdPersonCamera : MonoBehaviour {
     private float currentX = 20;
     private float currentY = 20;
     public float sensitivityX = 4f;
-    public float sensitivityY = 4f;
+    public float sensitivityY = -4f;
     public float sensitivityScroll = 3f;
 
     private Camera cam;
