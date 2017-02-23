@@ -23,7 +23,7 @@ public class BounceBlock : ActionBlock {
     public bool cancelZVel = false;
 
     protected override void performAction(Collider collided) {
-        if (collided.gameObject.tag == "Player")
+        if (new List<string>() { "Player", "Penguin" }.Contains(collided.gameObject.tag))
             Bounce(collided.gameObject);
     }
 

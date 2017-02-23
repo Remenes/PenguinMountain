@@ -60,12 +60,12 @@ public class PlayerScript : MonoBehaviour {
         anim.vert = vert;
 
         Vector3 direction = (camRotation * new Vector3(hori, 0, vert));
-        print("Check" + direction);
+        
         //direction.x = direction.x > 0 ? 1 : 0;
         //direction.z = direction.z > 0 ? 1 : 0;
         direction.y = 0;
         direction = direction.normalized;
-        print("Normalized" + direction);
+
         //if (justJumped) {
         //    justJumped = false;
         //    playerRB.velocity = direction * speed;

@@ -9,6 +9,7 @@ public class WindBlock : ActionBlock {
 
 	// Use this for initialization
 	void Start () {
+        
 	}
 
     /*
@@ -18,7 +19,7 @@ public class WindBlock : ActionBlock {
     */
 
     protected override void performAction(Collider collided) {
-        if (collided.gameObject.tag == "Player") {
+        if (new List<string>() { "Player", "Penguin" }.Contains(collided.gameObject.tag) ) {
         Rigidbody playerRB = collided.GetComponent<Rigidbody>();
             //if (!playerRB)
             //    return;
