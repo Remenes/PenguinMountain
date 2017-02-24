@@ -48,7 +48,7 @@ public class AnimControl : MonoBehaviour {
         playAnim();
 
         if (justJumped) {
-            transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime);
+            transform.Rotate(new Vector3(210, 0, 0) * Time.deltaTime);
         } else {
             
             if (inAir) {
